@@ -41,7 +41,45 @@ import {
   Lock,
   Loader2,
 } from 'lucide-react';
-import { BrandInfo } from '../brand-types';
+export interface BrandInfo {
+  id: string;
+  name: string;
+  slug: string;
+  logoText: string;
+  logoUrl?: string;
+  subTagline?: string;
+  tagline: string;
+  accentColor: string;
+  description: string;
+  metaTitle: string;
+  metaDescription: string;
+  heroMotto?: string;
+  calloutScript?: string;
+  techBadge?: string;
+  tollFree?: string;
+  affiliationBadge?: string;
+  brandThemeColors?: {
+    primary: string;
+    darkBg: string;
+    accent: string;
+    lightBg: string;
+    border: string;
+  };
+  commonProblems: string[];
+  brandFaqs: { question: string; answer: string }[];
+  popularSearches?: string[];
+  showcaseImage?: string;
+  heroImage?: string;
+  heroBgImage?: string;
+  partsBannerImage?: string;
+  bottomBannerImage?: string;
+  serviceImages?: {
+    repair?: string;
+    filter?: string;
+    amc?: string;
+    quality?: string;
+  };
+}
 import { BUSINESS_DETAILS, BANGALORE_LOCALITIES } from '../data/content';
 import { optimizeCloudinary } from '../utils/imageOptimizer';
 import { PricingTransparency } from './PricingTransparency';
@@ -49,7 +87,7 @@ import { BrandComparison } from './BrandComparison';
 import { HomeBlogSection } from './HomeBlogSection';
 
 interface BrandPageLayoutProps {
-  brand: BrandInfo;
+  brand: any;
 }
 
 const SEO_BRAND_KEYWORDS = [
