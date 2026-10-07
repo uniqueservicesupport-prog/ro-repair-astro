@@ -41,9 +41,9 @@ import {
   Lock,
   Loader2,
 } from 'lucide-react';
-import { BrandInfo } from '../../types';
-import { BUSINESS_DETAILS, BANGALORE_LOCALITIES } from '../../data/content';
-import { optimizeCloudinary } from '../../utils/imageOptimizer';
+import { BrandInfo } from '../types';
+import { BUSINESS_DETAILS, BANGALORE_LOCALITIES } from '../data/content';
+import { optimizeCloudinary } from '../utils/imageOptimizer';
 import { PricingTransparency } from './PricingTransparency';
 import { BrandComparison } from './BrandComparison';
 import { HomeBlogSection } from './HomeBlogSection';
