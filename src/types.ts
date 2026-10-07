@@ -1,4 +1,4 @@
-export type PageRoute = 
+export type PageRoute =
   | '/'
   | '/kent-service'
   | '/aquaguard-service'
@@ -10,7 +10,8 @@ export type PageRoute =
   | '/refund-policy'
   | '/disclaimer'
   | '/cookie-policy'
-  | '/404';
+  | '/404'
+  | string; // Yeh add kiya taaki koi bhi brand slug chal sake
 
 export interface ServiceItem {
   id: string;
