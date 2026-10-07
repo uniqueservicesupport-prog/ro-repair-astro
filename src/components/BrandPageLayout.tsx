@@ -1,93 +1,26 @@
 import React, { useState, useRef, useEffect } from 'react';
-import {
-  Phone,
-  MapPin,
-  Check,
-  ShieldCheck,
-  Headset,
-  Star,
-  Clock,
-  Wrench,
-  Droplets,
-  CheckCircle2,
-  ChevronDown,
-  ChevronUp,
-  Search,
-  User,
-  Play,
-  ArrowRight,
-  X,
-  Sparkles,
-  ThumbsUp,
-  Send,
-  Heart,
-  Activity,
-  Layers,
-  Filter,
-  Shield,
-  Zap,
-  Menu,
-  CheckCircle,
-  Truck,
-  IndianRupee,
-  Settings,
-  HelpCircle,
-  Share2,
-  Leaf,
-  Facebook,
-  Instagram,
-  Youtube,
-  Linkedin,
-  Lock,
-  Loader2,
-} from 'lucide-react';
-export interface BrandInfo {
-  id: string;
-  name: string;
-  slug: string;
-  logoText: string;
-  logoUrl?: string;
-  subTagline?: string;
-  tagline: string;
-  accentColor: string;
-  description: string;
-  metaTitle: string;
-  metaDescription: string;
-  heroMotto?: string;
-  calloutScript?: string;
-  techBadge?: string;
-  tollFree?: string;
-  affiliationBadge?: string;
-  brandThemeColors?: {
-    primary: string;
-    darkBg: string;
-    accent: string;
-    lightBg: string;
-    border: string;
-  };
-  commonProblems: string[];
-  brandFaqs: { question: string; answer: string }[];
-  popularSearches?: string[];
-  showcaseImage?: string;
-  heroImage?: string;
-  heroBgImage?: string;
-  partsBannerImage?: string;
-  bottomBannerImage?: string;
-  serviceImages?: {
-    repair?: string;
-    filter?: string;
-    amc?: string;
-    quality?: string;
-  };
-}
+// 👇 Saare icons ko namespace import se laao
+import * as LucideIcons from 'lucide-react';
+
 import { BUSINESS_DETAILS, BANGALORE_LOCALITIES } from '../data/content';
 import { optimizeCloudinary } from '../utils/imageOptimizer';
 import { PricingTransparency } from './PricingTransparency';
 import { BrandComparison } from './BrandComparison';
 import { HomeBlogSection } from './HomeBlogSection';
+import { BrandInfo } from '../brand-types';
+
+// 👇 Icons ko destructure karo
+const {
+  Phone, MapPin, Check, ShieldCheck, Headset, Star, Clock, Wrench,
+  Droplets, CheckCircle2, ChevronDown, ChevronUp, Search, User, Play,
+  ArrowRight, X, Sparkles, ThumbsUp, Send, Heart, Activity, Layers,
+  Filter, Shield, Zap, Menu, CheckCircle, Truck, IndianRupee, Settings,
+  HelpCircle, Share2, Leaf, Facebook, Instagram, Youtube, Linkedin,
+  Lock, Loader2,
+} = LucideIcons;
 
 interface BrandPageLayoutProps {
-  brand: any;
+  brand: BrandInfo;
 }
 
 const SEO_BRAND_KEYWORDS = [
@@ -768,10 +701,10 @@ export function BrandPageLayout({ brand }: BrandPageLayoutProps) {
             <div className="space-y-3">
               <h3 className="font-bold text-slate-900 text-sm tracking-tight">Follow Us</h3>
               <div className="flex items-center gap-3.5 text-slate-800 pt-0.5">
-                <a href="#" aria-label="Facebook" className="hover:text-[#1877F2] transition-colors"><Facebook className="w-[18px] h-[18px] fill-current" /></a>
-                <a href="#" aria-label="Instagram" className="hover:text-[#E4405F] transition-colors"><Instagram className="w-[18px] h-[18px]" /></a>
-                <a href="#" aria-label="YouTube" className="hover:text-[#FF0000] transition-colors"><Youtube className="w-[18px] h-[18px]" /></a>
-                <a href="#" aria-label="LinkedIn" className="hover:text-[#0A66C2] transition-colors"><Linkedin className="w-[18px] h-[18px] fill-current" /></a>
+                <a href="#" aria-label="Facebook" className="hover:text-[#1877F2] transition-colors font-bold text-xs">FB</a>
+                <a href="#" aria-label="Instagram" className="hover:text-[#E4405F] transition-colors font-bold text-xs">IG</a>
+                <a href="#" aria-label="YouTube" className="hover:text-[#FF0000] transition-colors font-bold text-xs">YT</a>
+                <a href="#" aria-label="LinkedIn" className="hover:text-[#0A66C2] transition-colors font-bold text-xs">IN</a>
               </div>
             </div>
             <div className="space-y-3 col-span-2 sm:col-span-1">

@@ -3,6 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import { BrandPageLayout } from '../components/BrandPageLayout';
 import { BRAND_PAGES_DATA } from '../data/content';
 
+// 👇 YE ADD KARNA ZAROORI HAI (Astro ko batane ke liye ki kaunse pages banao)
+export function getStaticPaths() {
+  const brandKeys = Object.keys(BRAND_PAGES_DATA);
+  return brandKeys.map((key) => ({
+    params: { brand: key },
+  }));
+}
+
 const { brand } = Astro.params;
 const brandData = BRAND_PAGES_DATA[brand];
 
@@ -10,9 +18,7 @@ if (!brandData) {
   return Astro.redirect('/404');
 }
 ---
-<Layout 
-  title={`${brandData.name} RO Service Bangalore | 60-Min Doorstep`}
-  description={`Get certified ${brandData.name} RO repair in Bangalore. 60-min doorstep service, genuine parts, 30-day warranty.`}
->
+
+<Layout title={`${brandData.name} Service | RO Service Center`}>
   <BrandPageLayout brand={brandData} client:load />
 </Layout>

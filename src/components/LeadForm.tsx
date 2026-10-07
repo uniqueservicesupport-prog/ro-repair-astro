@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
 import { Phone, CheckCircle2, AlertCircle, Loader2, Send, User, MapPin, Wrench } from 'lucide-react';
 import { BUSINESS_DETAILS } from '../data/content';
@@ -116,7 +114,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
     setServerError(null);
 
     if (botField) {
-      // Quietly treat spam bot submission as successful
       setIsSuccess(true);
       return;
     }
@@ -153,7 +150,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           serviceType: SERVICE_OPTIONS[0],
         });
       } else {
-        // Even if non-200 in dev/mock, show success to user
         setIsSuccess(true);
       }
     } catch (err) {
@@ -215,7 +211,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
           className="space-y-4"
           noValidate
         >
-          {/* Hidden fields for Netlify Forms & Honeypot */}
           <input type="hidden" name="form-name" value="lead-booking-form" />
           <input type="hidden" name="sourcePage" value={sourcePage} />
           <p className="hidden" style={{ display: 'none' }}>
@@ -333,14 +328,12 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                       </option>
                     ))}
                   </select>
-                  {/* Custom arrow for select */}
                   <div className="pointer-events-none absolute right-4 top-[38px] flex items-center text-slate-400">
                     <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                   </div>
                 </div>
               </div>
 
-              {/* Select Service Required (if not hidden) */}
               {!hideServiceSelector && (
                 <div className="relative">
                   <label htmlFor="serviceType" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
@@ -374,7 +367,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
             </>
           ) : (
             <div className={`grid grid-cols-1 ${!hideServiceSelector ? 'sm:grid-cols-2' : ''} gap-4`}>
-              {/* PinCode */}
               <div className="relative">
                 <label htmlFor="pinCode" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">Pincode</label>
                 <div className="relative group">
@@ -401,7 +393,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
                 {errors.pinCode && <p className="text-xs text-red-500 mt-1.5 ml-1 font-medium">{errors.pinCode}</p>}
               </div>
 
-              {/* Select Service Required (if not hidden) */}
               {!hideServiceSelector && (
                 <div className="relative">
                   <label htmlFor="serviceType" className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
@@ -435,7 +426,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({
             </div>
           )}
 
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}

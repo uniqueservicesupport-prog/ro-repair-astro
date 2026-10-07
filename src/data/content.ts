@@ -63,6 +63,61 @@ export const SERVICES_LIST: ServiceItem[] = [
 ];
 
 export const BRAND_PAGES_DATA: Record<string, BrandInfo> = {
+  // 👇 HOMEPAGE (GENERIC MULTI-BRAND) 👇
+  'ro-service-24x7': {
+    id: 'ro-service-24x7',
+    name: 'RO Service Center',
+    slug: '/',
+    logoText: 'RO Service Center',
+    logoUrl: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789813995/IMG-20260918-WA0070_skegej.jpg',
+    subTagline: 'Online 24x7',
+    tagline: 'Bangalore\'s Most Trusted Multi-Brand RO Service — Doorstep in 60 Minutes',
+    accentColor: 'from-blue-600 to-cyan-500',
+    heroMotto: 'Pure Water. Healthy Families. Brighter Tomorrows.',
+    calloutScript: 'Pure Water Pure Happiness',
+    techBadge: 'Certified Multi-Brand Water Purifier Experts',
+    tollFree: '1800-123-4567',
+    affiliationBadge: 'Multi-Brand Experts',
+    brandThemeColors: {
+      primary: '#0066cc',
+      darkBg: '#0c2b5e',
+      accent: '#10b981',
+      lightBg: '#f0f7ff',
+      border: '#bfdbfe',
+    },
+    description: 'Bangalore\'s premier doorstep water purifier specialists. Certified technicians arrive in 60–90 minutes with genuine replacement cartridges, digital TDS calibration, and a 30-day labor warranty.',
+    metaTitle: 'RO Service Center Online 24x7 | Bangalore Water Purifier Repair',
+    metaDescription: 'Fast doorstep RO service across Bangalore in 60–90 mins. Multi-brand repair, filter replacement, AMC for Kent, Aquaguard, Pureit, AO Smith, Livpure.',
+    commonProblems: [
+      'Low or no water flow from the purifier',
+      'Water leakage from bottom or connectors',
+      'Unusual taste or odor in purified water',
+      'Continuous beeping or red indicator lights',
+      'High TDS output despite purification',
+      'Booster pump making loud noise',
+    ],
+    brandFaqs: [],
+    popularSearches: [
+      'RO service Bangalore',
+      'Water purifier repair near me',
+      'RO filter replacement Bangalore',
+      'RO AMC plan Bangalore',
+      'Water purifier technician near me',
+    ],
+    showcaseImage: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1787239134/file_00000000cb9082119ada12e5c50c238d_yb23pj.png',
+    heroImage: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789813499/IMG-20260918-WA0073_qesfc9.jpg',
+    heroBgImage: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789813499/IMG-20260918-WA0073_qesfc9.jpg',
+    partsBannerImage: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789744713/file_00000000be388230a7ea3fe9b5fef059_oqqijq.png',
+    bottomBannerImage: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789744714/file_00000000c0e082118f500d75d9418d25_a6woez.png',
+    serviceImages: {
+      repair: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789744767/file_0000000072548211b75cdf8e48b91b7d_mmuame.png',
+      filter: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789744766/file_00000000696c8211b0e9d31b75c0009e_rpigfw.png',
+      amc: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789744767/file_000000008d20821198976eef39c910a9_dwhpb5.png',
+      quality: 'https://res.cloudinary.com/dieq3fjuv/image/upload/v1789669453/IMG-20260917-WA0018_m8dnkp.jpg',
+    },
+  },
+
+  // 👇 KENT 👇
   'kent-service': {
     id: 'kent',
     name: 'Kent',
@@ -153,6 +208,7 @@ export const BRAND_PAGES_DATA: Record<string, BrandInfo> = {
     },
   },
 
+  // 👇 AQUAGUARD 👇
   'aquaguard-service': {
     id: 'aquaguard',
     name: 'Aquaguard',
@@ -243,6 +299,7 @@ export const BRAND_PAGES_DATA: Record<string, BrandInfo> = {
     },
   },
 
+  // 👇 PUREIT 👇
   'pureit-service': {
     id: 'pureit',
     name: 'Pureit',
@@ -333,6 +390,7 @@ export const BRAND_PAGES_DATA: Record<string, BrandInfo> = {
     },
   },
 
+  // 👇 AO SMITH 👇
   'aosmith-service': {
     id: 'ao-smith',
     name: 'AO Smith',
@@ -423,6 +481,7 @@ export const BRAND_PAGES_DATA: Record<string, BrandInfo> = {
     },
   },
 
+  // 👇 LIVPURE 👇
   'livpure-service': {
     id: 'livpure',
     name: 'Livpure',
@@ -607,7 +666,7 @@ export const HOMEPAGE_FAQS: FAQItem[] = [
   },
   {
     question: 'Is borewell or tanker water with high TDS suitable for domestic RO purifiers?',
-    answer: 'Yes. Many Bangalore localities depend on deep borewells or private water tankers with TDS exceeding 1000–1800 PPM and high mineral hardness. We equip your system with high-rejection anti-scalant membranes capable of purifying input water up to 2500 PPM TDS.',
+    answer: 'Yes. Many Bangalore localities depend on deep borewells or private water tanks with TDS exceeding 1000–1800 PPM and high mineral hardness. We equip your system with high-rejection anti-scalant membranes capable of purifying input water up to 2500 PPM TDS.',
   },
   {
     question: 'How long does a typical doorstep servicing or filter change visit take?',

@@ -1,8 +1,6 @@
-'use client';
-
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
-import { BRAND_PAGES_DATA } from '@/src/data/content'; // Path check kar lena
+import { BRAND_PAGES_DATA } from '@/data/content';
 
 interface BrandsGridProps {
   onNavigate: (slug: string) => void;

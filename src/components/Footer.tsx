@@ -1,12 +1,7 @@
-'use client';
-
 import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { Phone, MapPin, Mail, Clock, Droplets, BookOpen } from 'lucide-react';
-import { BUSINESS_DETAILS, BANGALORE_LOCALITIES } from '@/src/data/content';
-import { PageRoute } from '@/src/types';
+import { BUSINESS_DETAILS, BANGALORE_LOCALITIES } from '@/data/content';
+import { PageRoute } from '@/types';
 
 interface FooterProps {
   onNavigate?: (route: PageRoute) => void;
@@ -43,7 +38,8 @@ const BRAND_FOOTER_CONFIGS: Record<string, BrandFooterStyle> = {
 };
 
 export const Footer: React.FC<FooterProps> = ({ currentRoute: propCurrentRoute, lastBrandRoute }) => {
-  const pathname = usePathname() || '/';
+  // ✅ Next.js ka usePathname hata diya, ab window.location use kar rahe hain
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
   const currentRoute = propCurrentRoute || (pathname as PageRoute);
 
   const activeRouteForBrand = (currentRoute && currentRoute.endsWith('-service'))
@@ -68,7 +64,8 @@ export const Footer: React.FC<FooterProps> = ({ currentRoute: propCurrentRoute, 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-xl overflow-hidden shadow-md shrink-0">
-                <Image
+                {/* ✅ Next.js Image ko <img> se replace kiya */}
+                <img
                   src="https://res.cloudinary.com/dieq3fjuv/image/upload/v1789813995/IMG-20260918-WA0070_skegej.jpg"
                   alt="RO Service Center Online 24x7"
                   width={44}
@@ -95,13 +92,14 @@ export const Footer: React.FC<FooterProps> = ({ currentRoute: propCurrentRoute, 
                 <Clock className="w-4 h-4" />
                 <span>{BUSINESS_DETAILS.workingHours}</span>
               </div>
-              <Link
+              {/* ✅ Next.js Link ko <a> se replace kiya */}
+              <a
                 href="/blog"
                 className="flex items-center gap-1.5 text-xs text-cyan-200 hover:text-white font-bold underline transition-colors"
               >
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>RO Service Blog & Guides</span>
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -112,44 +110,44 @@ export const Footer: React.FC<FooterProps> = ({ currentRoute: propCurrentRoute, 
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
-                <Link
+                <a
                   href="/privacy-policy"
                   className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <span className="text-white/60">›</span> Privacy Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/terms-of-service"
                   className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <span className="text-white/60">›</span> Terms and Conditions
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/refund-policy"
                   className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <span className="text-white/60">›</span> Cancellation &amp; Refund Policy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/disclaimer"
                   className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <span className="text-white/60">›</span> Disclaimer
-                </Link>
+                </a>
               </li>
               <li>
-                <Link
+                <a
                   href="/cookie-policy"
                   className="hover:text-white transition-colors flex items-center gap-1.5"
                 >
                   <span className="text-white/60">›</span> Cookie Policy
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

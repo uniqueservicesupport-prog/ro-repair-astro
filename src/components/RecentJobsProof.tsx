@@ -1,9 +1,6 @@
-'use client';
-
 import React from 'react';
-import Image from 'next/image';
 import { CheckCircle2, MapPin, Wrench, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
-import { BUSINESS_DETAILS } from '@/src/data/content';
+import { BUSINESS_DETAILS } from '@/data/content';
 
 interface RecentJob {
   locality: string;
@@ -102,14 +99,12 @@ export const RecentJobsProof: React.FC<RecentJobsProofProps> = ({ onBookClick })
               className="rounded-2xl border border-slate-200/80 bg-white overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between"
             >
               <div>
-                {/* Photo */}
+                {/* Photo - ✅ Next Image ko <img> se replace kiya, fill hata diya */}
                 <div className="relative h-44 w-full bg-slate-100">
-                  <Image
+                  <img
                     src={job.image}
                     alt={`${job.brand} Repair in ${job.locality}`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    className="object-cover"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-xs text-[11px] font-bold text-[#002b66] px-2.5 py-1 rounded-lg shadow-xs flex items-center gap-1">
                     <MapPin className="w-3 h-3 text-red-500 shrink-0" />

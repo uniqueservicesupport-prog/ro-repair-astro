@@ -1,8 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
 import { BookOpen, Calendar, Clock, ArrowRight } from 'lucide-react';
-import { BLOG_POSTS, getBrandBlogImage } from '@/src/data/blogPosts';
+import { BLOG_POSTS, getBrandBlogImage } from '@/data/blogPosts';
 
 interface HomeBlogSectionProps {
   brandSlug?: string;
@@ -70,17 +68,18 @@ export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({
             </p>
           </div>
 
-          <Link
+          {/* ✅ Next Link ko <a> se replace kiya */}
+          <a
             href={viewAllUrl}
             style={{ color: brandThemeColor }}
             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold hover:underline group cursor-pointer self-start sm:self-auto shrink-0"
           >
             <span>{viewAllLabel}</span>
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Link>
+          </a>
         </div>
 
-        {/* Blog Cards Grid (Strictly NO pill on cards, and brand-matched images only) */}
+        {/* Blog Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {displayPosts.map((post, idx) => {
             const postImage = isBrand
@@ -95,16 +94,14 @@ export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({
                 key={post.slug}
                 className="bg-white rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col overflow-hidden group hover:border-blue-300/80"
               >
-                {/* Thumbnail Image - Strictly only brand images used when on brand page */}
-                <Link href={postHref} className="relative h-48 sm:h-52 w-full bg-slate-100 block overflow-hidden">
-                  <Image
+                {/* Thumbnail Image - ✅ Next Image ko <img> se replace kiya, fill/sizes hata diye */}
+                <a href={postHref} className="relative h-48 sm:h-52 w-full bg-slate-100 block overflow-hidden">
+                  <img
                     src={postImage}
                     alt={post.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
-                </Link>
+                </a>
 
                 {/* Content Body */}
                 <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
@@ -124,9 +121,9 @@ export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({
 
                     {/* Title */}
                     <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0066cc] transition-colors leading-snug mb-2.5">
-                      <Link href={postHref}>
+                      <a href={postHref}>
                         {post.title}
-                      </Link>
+                      </a>
                     </h3>
 
                     {/* Excerpt */}
@@ -137,21 +134,21 @@ export const HomeBlogSection: React.FC<HomeBlogSectionProps> = ({
 
                   {/* Footer Link */}
                   <div className="pt-3.5 border-t border-slate-100 flex items-center justify-between mt-auto">
-                    <Link
+                    <a
                       href={postHref}
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0066cc] group-hover:text-[#0052a3] transition-colors"
                     >
                       <span>Read Guide</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                    </a>
 
                     {post.relatedBrandSlug && (
-                      <Link
+                      <a
                         href={`/${post.relatedBrandSlug}`}
                         className="text-[11px] font-semibold text-slate-500 hover:text-slate-800 bg-slate-100 hover:bg-slate-200/80 px-2 py-0.5 rounded transition-colors"
                       >
                         {post.relatedBrandName} →
-                      </Link>
+                      </a>
                     )}
                   </div>
                 </div>

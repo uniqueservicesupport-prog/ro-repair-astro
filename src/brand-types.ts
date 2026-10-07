@@ -1,31 +1,9 @@
-export type PageRoute = 
-  | '/'
-  | '/kent-service'
-  | '/aquaguard-service'
-  | '/pureit-service'
-  | '/aosmith-service'
-  | '/livpure-service'
-  | '/privacy-policy'
-  | '/terms-of-service'
-  | '/refund-policy'
-  | '/disclaimer'
-  | '/cookie-policy'
-  | '/404';
-
-export interface ServiceItem {
-  id: string;
-  title: string;
-  description: string;
-  iconName: string;
-  features: string[];
-  popularTag?: string;
-  startingPrice?: string;
-}
+// src/brand-types.ts
 
 export interface BrandInfo {
   id: string;
   name: string;
-  slug: PageRoute;
+  slug: string;
   logoText: string;
   logoUrl?: string;
   subTagline?: string;
@@ -62,27 +40,11 @@ export interface BrandInfo {
   };
 }
 
-export interface FAQItem {
-  question: string;
-  answer: string;
-  category?: string;
-}
-
-export interface Testimonial {
-  id: string;
-  name: string;
-  locality: string;
-  rating: number;
-  brandServiced: string;
-  comment: string;
-  date: string;
-}
-
+// 👇 Ye LeadForm ke liye zaroori hai
 export interface LeadFormData {
   fullName: string;
   mobileNumber: string;
   pinCode: string;
   selectedBrand: string;
-  serviceType?: string;
-  message?: string;
+  serviceType: string;
 }

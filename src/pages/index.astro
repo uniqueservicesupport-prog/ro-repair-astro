@@ -3,11 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import { BrandPageLayout } from '../components/BrandPageLayout';
 import { BRAND_PAGES_DATA } from '../data/content';
 
-const homepageData = BRAND_PAGES_DATA['ro-service-24x7'] || Object.values(BRAND_PAGES_DATA)[0];
+// 👇 Homepage ke liye 'ro-service-24x7' wala data uthao
+const genericBrand = BRAND_PAGES_DATA['ro-service-24x7'];
+
+if (!genericBrand) {
+  return Astro.redirect('/kent-service'); // Agar generic data na mile toh Kent pe bhej do
+}
 ---
-<Layout 
-  title="RO Service Center Bangalore | 60-Min Doorstep Repair"
-  description="Bangalore's most trusted RO water purifier repair service. Same-day doorstep service, genuine filters, 30-day warranty."
->
-  <BrandPageLayout brand={homepageData} client:load />
+
+<Layout title="RO Service Center Online 24x7 | Bangalore">
+  <BrandPageLayout brand={genericBrand} client:load />
 </Layout>

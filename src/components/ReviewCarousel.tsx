@@ -1,8 +1,6 @@
-'use client';
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Testimonial } from '@/src/types';
+import { Testimonial } from '@/types';
 
 interface ReviewCarouselProps {
   testimonials: Testimonial[];
