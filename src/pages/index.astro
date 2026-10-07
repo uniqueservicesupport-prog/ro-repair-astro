@@ -1,16 +1,13 @@
 ---
----
+import Layout from '../layouts/Layout.astro';
+import BrandPageLayout from '../components/BrandPageLayout';
+import { BRAND_PAGES_DATA } from '../data/content';
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+const homepageData = BRAND_PAGES_DATA['ro-service-24x7'] || Object.values(BRAND_PAGES_DATA)[0];
+---
+<Layout 
+  title="RO Service Center Bangalore | 60-Min Doorstep Repair"
+  description="Bangalore's most trusted RO water purifier repair service. Same-day doorstep service, genuine filters, 30-day warranty."
+>
+  <BrandPageLayout brand={homepageData} client:load />
+</Layout>
