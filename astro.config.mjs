@@ -1,10 +1,8 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import path from 'path';
 
-// https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
@@ -12,12 +10,6 @@ export default defineConfig({
       alias: {
         '@': path.resolve('./src'),
       },
-    },
-    optimizeDeps: {
-      include: ['lucide-react'],
-    },
-    ssr: {
-      noExternal: ['lucide-react'],
     },
   },
   integrations: [react()],

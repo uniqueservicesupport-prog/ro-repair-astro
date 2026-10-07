@@ -20,5 +20,5 @@ if (!brandData) {
 ---
 
 <Layout title={`${brandData.name} Service | RO Service Center`}>
-  <BrandPageLayout brand={brandData} client:load />
+  <BrandPageLayout brand={brandData} client:only="react" />
 </Layout>

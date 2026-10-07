@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-// 👇 Saare icons ko namespace import se laao
 import * as LucideIcons from 'lucide-react';
 
 import { BUSINESS_DETAILS, BANGALORE_LOCALITIES } from '../data/content';
@@ -9,7 +8,6 @@ import { BrandComparison } from './BrandComparison';
 import { HomeBlogSection } from './HomeBlogSection';
 import { BrandInfo } from '../brand-types';
 
-// 👇 Icons ko destructure karo
 const {
   Phone, MapPin, Check, ShieldCheck, Headset, Star, Clock, Wrench,
   Droplets, CheckCircle2, ChevronDown, ChevronUp, Search, User, Play,
