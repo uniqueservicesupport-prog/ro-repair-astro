@@ -1,4 +1,4 @@
-import { PageRoute } from '../types';
+import { PageRoute } from '../brand-types';
 
 export const SUBDOMAIN_ROUTE_MAP: Record<string, PageRoute> = {
   kent: '/kent-service',

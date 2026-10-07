@@ -1,4 +1,4 @@
-import { PageRoute } from '../types';
+import { PageRoute } from '../brand-types';
 
 export interface BrandThemeConfig {
   id: string;

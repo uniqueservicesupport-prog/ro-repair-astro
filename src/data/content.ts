@@ -1,4 +1,4 @@
-import { BrandInfo, FAQItem, ServiceItem, Testimonial } from '../types';
+import { BrandInfo, FAQItem, ServiceItem, Testimonial } from '../brand-types';
 
 export const BUSINESS_DETAILS = {
   name: 'RO Service Center Online 24x7',
